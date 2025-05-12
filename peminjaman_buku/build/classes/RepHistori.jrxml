@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     tblpeminjam.`id_peminjam` AS tblpeminjam_id_peminjam,
+     tblpeminjam.`id_user` AS tblpeminjam_id_user,
+     tblpeminjam.`alamat` AS tblpeminjam_alamat,
+     tblpeminjam.`no_telp` AS tblpeminjam_no_telp,
+     tblpeminjam.`email` AS tblpeminjam_email,
+     tblpeminjam.`tgl_pinjam` AS tblpeminjam_tgl_pinjam,
+     tblpeminjam.`id_buku` AS tblpeminjam_id_buku,
+     tblpeminjam.`status_buku` AS tblpeminjam_status_buku
+FROM
+     `tblpeminjam` tblpeminjam]]>
+	</queryString>
+	<field name="tblpeminjam_id_peminjam" class="java.lang.Integer"/>
+	<field name="tblpeminjam_id_user" class="java.lang.String"/>
+	<field name="tblpeminjam_id_buku" class="java.lang.String"/>
+	<field name="tblpeminjam_status_buku" class="java.lang.String"/>
+	<group name="tblpeminjam_id_peminjam">
+		<groupExpression><![CDATA[$F{tblpeminjam_id_peminjam}]]></groupExpression>
+	</group>
+	<group name="tblpeminjam_id_user">
+		<groupExpression><![CDATA[$F{tblpeminjam_id_user}]]></groupExpression>
+	</group>
+	<group name="tblpeminjam_id_buku">
+		<groupExpression><![CDATA[$F{tblpeminjam_id_buku}]]></groupExpression>
+	</group>
+	<group name="tblpeminjam_status_buku">
+		<groupExpression><![CDATA[$F{tblpeminjam_status_buku}]]></groupExpression>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="140" splitType="Stretch">
+			<staticText>
+				<reportElement x="80" y="109" width="394" height="20"/>
+				<textElement>
+					<font size="15"/>
+				</textElement>
+				<text><![CDATA[HISTORI PEMINJAMAN DI PERPUSTAKAAN SMK TIARA AKSARA]]></text>
+			</staticText>
+			<image>
+				<reportElement x="219" y="0" width="99" height="97"/>
+				<imageExpression class="java.lang.String"><![CDATA["C:\\Users\\user\\Pictures\\LOGO TA.png"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch">
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="31" y="15" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.util.Date"><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch">
+			<staticText>
+				<reportElement x="31" y="28" width="100" height="20"/>
+				<textElement/>
+				<text><![CDATA[ID PEMINJAM]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="160" y="28" width="100" height="20"/>
+				<textElement/>
+				<text><![CDATA[NAMA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="292" y="28" width="100" height="20"/>
+				<textElement/>
+				<text><![CDATA[BUKU]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="436" y="28" width="100" height="20"/>
+				<textElement/>
+				<text><![CDATA[STATUS BUKU]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="42" splitType="Stretch">
+			<textField>
+				<reportElement x="31" y="11" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{tblpeminjam_id_peminjam}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="160" y="11" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{tblpeminjam_id_user}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="292" y="11" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{tblpeminjam_id_buku}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="436" y="11" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{tblpeminjam_status_buku}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

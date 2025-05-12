@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+	<property name="ireport.zoom" value="1.2100000000000006"/>
+	<property name="ireport.x" value="53"/>
+	<property name="ireport.y" value="0"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     tblabsensi.`id_absensi` AS tblabsensi_id_absensi,
+     tblabsensi.`id_petugas` AS tblabsensi_id_petugas,
+     tblabsensi.`tgl_absensi` AS tblabsensi_tgl_absensi,
+     tblabsensi.`kehadiran` AS tblabsensi_kehadiran
+FROM
+     `tblabsensi` tblabsensi]]>
+	</queryString>
+	<field name="tblabsensi_id_absensi" class="java.lang.Integer"/>
+	<field name="tblabsensi_id_petugas" class="java.lang.String"/>
+	<field name="tblabsensi_tgl_absensi" class="java.sql.Timestamp"/>
+	<field name="tblabsensi_kehadiran" class="java.lang.String"/>
+	<group name="tblabsensi_id_absensi">
+		<groupExpression><![CDATA[$F{tblabsensi_id_absensi}]]></groupExpression>
+	</group>
+	<group name="tblabsensi_id_petugas">
+		<groupExpression><![CDATA[$F{tblabsensi_id_petugas}]]></groupExpression>
+	</group>
+	<group name="tblabsensi_tgl_absensi">
+		<groupExpression><![CDATA[$F{tblabsensi_tgl_absensi}]]></groupExpression>
+	</group>
+	<group name="tblabsensi_kehadiran">
+		<groupExpression><![CDATA[$F{tblabsensi_kehadiran}]]></groupExpression>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="127" splitType="Stretch">
+			<staticText>
+				<reportElement x="89" y="97" width="390" height="20"/>
+				<textElement>
+					<font size="15"/>
+				</textElement>
+				<text><![CDATA[LIST ABSENSI PETUGAS PERPUSTAKAAN SMK TIARA AKSARA]]></text>
+			</staticText>
+			<image>
+				<reportElement x="240" y="0" width="99" height="97"/>
+				<imageExpression class="java.lang.String"><![CDATA["C:\\Users\\user\\Pictures\\LOGO TA.png"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="29" splitType="Stretch">
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="22" y="0" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.util.Date"><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="26" splitType="Stretch">
+			<staticText>
+				<reportElement x="22" y="0" width="100" height="20"/>
+				<textElement/>
+				<text><![CDATA[ID Absen]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="153" y="0" width="100" height="20"/>
+				<textElement/>
+				<text><![CDATA[Nama Petugas]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="286" y="0" width="100" height="20"/>
+				<textElement/>
+				<text><![CDATA[Tgl Kehadiran]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="428" y="0" width="100" height="20"/>
+				<textElement/>
+				<text><![CDATA[Status Kehadiran]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="42" splitType="Stretch">
+			<textField>
+				<reportElement x="22" y="11" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{tblabsensi_id_absensi}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="153" y="11" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{tblabsensi_id_petugas}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="286" y="11" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{tblabsensi_tgl_absensi}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="428" y="11" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{tblabsensi_kehadiran}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
